@@ -125,30 +125,49 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'standard': {
-            'format': ‘%(asctime)s [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'
-        }
-    },
+    'disable_existing_loggers': False,
     'handlers': {
-        'debug': {
-            'level':'DEBUG',
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': './debug.log',
-            'formatter':'standard',
-        },
-        'console':{
+        'file': {
             'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'standard',
+            'class': 'logging.FileHandler',
+            'filename': './debug.log',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console','debug'],
+            'handlers': ['file'],
             'level': 'DEBUG',
             'propagate': True,
         },
-    }
+    },
 }
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': True,
+#     'formatters': {
+#         'standard': {
+#             'format': ‘%(asctime)s [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'
+#         }
+#     },
+#     'handlers': {
+#         'debug': {
+#             'level':'DEBUG',
+#             'class':'logging.handlers.RotatingFileHandler',
+#             'filename': './debug.log',
+#             'formatter':'standard',
+#         },
+#         'console':{
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'standard',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console','debug'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     }
+# }
