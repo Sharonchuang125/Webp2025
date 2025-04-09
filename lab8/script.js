@@ -29,10 +29,8 @@ window.addEventListener("keyup", function (e) {
 
   container.innerText += getRandomChars(1, 3);
 
-  if (wrongCount >= 3) {
-    for (let i = 0; i < 6; i++) {
-      container.innerText += getRandomChars(1, 3);
-    }
-    wrongCount = 0;
+ if (wrongCount >= 3) {
+    container.innerText += getRandomChars(6, 6);
+    wrongCount = 0; 
   }
 });
