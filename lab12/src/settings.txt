@@ -1,0 +1,4 @@
+root: C:\Users\user\AppData\Local\nvm\v23.11.0\hello-world\src 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none
